@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/AdOps/react/static/css/main.63ad55ab.chunk.css",
+    "main.js": "/AdOps/react/static/js/main.89425ec0.chunk.js",
+    "main.js.map": "/AdOps/react/static/js/main.89425ec0.chunk.js.map",
+    "runtime~main.js": "/AdOps/react/static/js/runtime~main.bc7e8170.js",
+    "runtime~main.js.map": "/AdOps/react/static/js/runtime~main.bc7e8170.js.map",
+    "static/js/2.1f9a6308.chunk.js": "/AdOps/react/static/js/2.1f9a6308.chunk.js",
+    "static/js/2.1f9a6308.chunk.js.map": "/AdOps/react/static/js/2.1f9a6308.chunk.js.map",
+    "index.html": "/AdOps/react/index.html",
+    "precache-manifest.074b25c68f50f0fc25c9954547a0cccc.js": "/AdOps/react/precache-manifest.074b25c68f50f0fc25c9954547a0cccc.js",
+    "service-worker.js": "/AdOps/react/service-worker.js",
+    "static/css/main.63ad55ab.chunk.css.map": "/AdOps/react/static/css/main.63ad55ab.chunk.css.map",
+    "static/media/all.min.css": "/AdOps/react/static/media/fa-solid-900.ef3df984.eot"
+  }
+}

@@ -1,0 +1,305 @@
+[33mcommit 2c5736d3419b128457b22f57903305d757b39043[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: unknown <scardona@omd.com.gt>
+Date:   Mon Jul 29 11:41:25 2019 -0600
+
+    version adform
+
+[1mdiff --git a/src/assets/15x15_logo_v2.png b/src/assets/15x15_logo_v2.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..340aa7e[m
+Binary files /dev/null and b/src/assets/15x15_logo_v2.png differ
+[1mdiff --git a/src/assets/css/index.css b/src/assets/css/index.css[m
+[1mindex d4faef8..220f7f3 100644[m
+[1m--- a/src/assets/css/index.css[m
+[1m+++ b/src/assets/css/index.css[m
+[36m@@ -12184,4 +12184,20 @@[m [ma.p-1.gocon.nav-link.active[m
+   height: 20px;[m
+   display: inline-block;[m
+   border: 1px solid #092d9a;[m
+[31m-}[m
+\ No newline at end of file[m
+[32m+[m[32m}[m
+[32m+[m[32m#accordionSidebar li.nav-item.active,[m
+[32m+[m[32m#accordionSidebar li.nav-item:hover[m
+[32m+[m[32m{[m
+[32m+[m[32m  background: #082784;[m
+[32m+[m[32m}[m
+[32m+[m[32m.contadorerrores:hover,[m
+[32m+[m[32m.filtrodetabs li:hover,[m
+[32m+[m[32mselect:hover[m
+[32m+[m[32m{[m
+[32m+[m[32mcursor: pointer;[m
+[32m+[m[32m}[m
+[32m+[m[32m.contadorerrores[m
+[32m+[m[32m{[m
+[32m+[m[32m  background: transparent;[m
+[32m+[m[32m  border: 0px;[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/assets/favicon.ico b/src/assets/favicon.ico[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0b3250f[m
+Binary files /dev/null and b/src/assets/favicon.ico differ
+[1mdiff --git a/src/componentes/errores/totales.js b/src/componentes/errores/totales.js[m
+[1mindex a012db7..30ffd83 100644[m
+[1m--- a/src/componentes/errores/totales.js[m
+[1m+++ b/src/componentes/errores/totales.js[m
+[36m@@ -1,5 +1,6 @@[m
+ import React, { Component } from 'react';[m
+ import '../../assets/css/error.css';[m
+[32m+[m[32mimport $ from 'jquery';[m
+ export class Totales extends Component {[m
+     intervalID;[m
+     state = {[m
+[36m@@ -15,67 +16,97 @@[m [mexport class Totales extends Component {[m
+ [m
+     }[m
+     componentWillUnmount() {[m
+[31m-      /*[m
+[31m-        stop getData() from continuing to run even[m
+[31m-        after unmounting this component. Notice we are calling[m
+[31m-        'clearTimeout()` here rather than `clearInterval()` as[m
+[31m-        in the previous example.[m
+[31m-      */[m
+[31m-      clearTimeout(this.intervalID);[m
+[32m+[m[32m        /*[m
+[32m+[m[32m          stop getData() from continuing to run even[m
+[32m+[m[32m          after unmounting this component. Notice we are calling[m
+[32m+[m[32m          'clearTimeout()` here rather than `clearInterval()` as[m
+[32m+[m[32m          in the previous example.[m
+[32m+[m[32m        */[m
+[32m+[m[32m        clearTimeout(this.intervalID);[m
+     }[m
+ [m
+     getData = () => {[m
+[31m-      fetch('https://annalectbox.com.gt/AdOps/Api/Errors/DataPlatforms/v1/CountData/?token=VmlzdGFkZXRvZG9zbG9zZXJyb3JlYWFhc3YxcGxhdGFmb3JtYWFkb3BzMjAxOQ==')[m
+[31m-        .then(response => response.json())[m
+[31m-        .then(data => {[m
+[31m-          this.setState({ data: [...data] });[m
+[31m-          // call getData() again in 5 seconds[m
+[31m-          this.intervalID = setTimeout(this.getData.bind(this), 500);[m
+[31m-        });[m
+[32m+[m[32m        fetch('https://annalectbox.com.gt/AdOps/Api/Errors/DataPlatforms/v1/CountData/?token=VmlzdGFkZXRvZG9zbG9zZXJyb3JlYWFhc3YxcGxhdGFmb3JtYWFkb3BzMjAxOQ==')[m
+[32m+[m[32m            .then(response => response.json())[m
+[32m+[m[32m            .then(data => {[m
+[32m+[m[32m                this.setState({ data: [...data] });[m
+[32m+[m[32m                // call getData() again in 5 seconds[m
+[32m+[m[32m                this.intervalID = setTimeout(this.getData.bind(this), 500);[m
+[32m+[m[32m            });[m
+     }[m
+ [m
+ [m
+[31m-    render() {[m
+[32m+[m[32m    activarnom() {[m
+[32m+[m[32m        $("#filtroStatus").val("Error de nomenclatura");[m
+[32m+[m[32m        $("#enviofiltro").click();[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m[32m    activarubi() {[m
+[32m+[m[32m        $("#filtroStatus").val("Error de ubicacion");[m
+[32m+[m[32m        $("#enviofiltro").click();[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m[32m    activarinv() {[m
+         [m
+[32m+[m[32m        $("#filtroStatus").val("Error de inversion");[m
+[32m+[m[32m        $("#enviofiltro").click();[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m[32m    totaacti(){[m
+[32m+[m[32m        $("#filtroStatus").val("");[m
+[32m+[m[32m        $("#enviofiltro").click();[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    render() {[m
+[32m+[m
+         // var {totales} = this.state;[m
+[31m-        var {data} = this.state;[m
+[31m-        return (data.map(total => ( [m
+[32m+[m[32m        var { data } = this.state;[m
+[32m+[m
+[32m+[m[32m        return (data.map(total => ([m
+             <div className="Totales col-12 ml-auto mr-auto d-flex flex-wrap justify-content-around mt-4 p-0" key={total.totalinversion}>[m
+[31m-      [m
+[31m-            <div className="col-xl-3 col-md-6 mb-1 contadorerrores">[m
+[31m-            <div className="card border-left-warning shadow h-100 py-2">[m
+[31m-                    <div className="card-body  pb-0 pt-0">[m
+[31m-                        <div className="row no-gutters align-items-center">[m
+[31m-                            <div className="col col d-flex align-items-center">[m
+[31m-                                <div className="text-xs font-weight-bold text-primary text-uppercase mb-0">Total de Errores[m
+[31m-                            </div>[m
+[32m+[m
+[32m+[m[32m                <div className="col-xl-3 col-md-6 mb-1 contadorerrores" onClick={this.totaacti}>[m
+[32m+[m[32m                    <div className="card border-left-warning shadow h-100 py-2">[m
+[32m+[m[32m                        <div className="card-body  pb-0 pt-0">[m
+[32m+[m[32m                            <div className="row no-gutters align-items-center">[m
+[32m+[m[32m                                <div className="col col d-flex align-items-center">[m
+[32m+[m[32m                                    <div className="text-xs font-weight-bold text-primary text-uppercase mb-0">Total de Errores[m
+                             </div>[m
+[31m-                            <div className="col-4">[m
+[31m-                                <img src="https://annalectbox.com.gt/AdOps/ErroresPlataformas/img/icon/alert.png" alt="inversion" className="totalerroresalert" />[m
+[32m+[m
+[32m+[m[32m                                    <p className="h5 mb-0 font-weight-bold text-gray-800 totalnumeroerrores erroresinversiontotal">[m
+[32m+[m
+[32m+[m[32m                                    </p>[m
+[32m+[m
+[32m+[m[32m                                </div>[m
+[32m+[m[32m                                <div className="col-4">[m
+[32m+[m[32m                                    <img src="https://annalectbox.com.gt/AdOps/ErroresPlataformas/img/icon/alert.png" alt="inversion" className="totalerroresalert" />[m
+[32m+[m[32m                                </div>[m
+                             </div>[m
+                         </div>[m
+                     </div>[m
+[32m+[m
+                 </div>[m
+[31m-            </div>[m
+[31m-            <div className="col-xl-3 col-md-6 mb-1 contadorerrores">[m
+[31m-            <div className="card border-left-primary shadow h-100 py-2">[m
+[31m-                    <div className="card-body  pb-0 pt-0">[m
+[31m-                        <div className="row no-gutters align-items-center">[m
+[31m-                            <div className="col col d-flex align-items-center">[m
+[31m-                                <div className="text-xs font-weight-bold text-primary text-uppercase mb-0">Errores de Nomenclatura[m
+[31m-                            </div>[m
+[31m-                                <div className="h5 mb-0 font-weight-bold text-gray-800 totalnumeroerrores erroresinversion">{total.totalnomeclatura}</div>[m
+[32m+[m[32m                <button className="col-xl-3 col-md-6 mb-1 contadorerrores" id="noacti" onClick={this.activarnom} >[m
+[32m+[m[32m                    <div className="card border-left-primary shadow h-100 py-2"  >[m
+[32m+[m[32m                        <div className="card-body  pb-0 pt-0">[m
+[32m+[m[32m                            <div className="row no-gutters align-items-center">[m
+[32m+[m[32m                                <div className="col col d-flex align-items-center">[m
+[32m+[m[32m                                    <div className="text-xs font-weight-bold text-primary text-uppercase mb-0">Errores de Nomenclatura[m
+                             </div>[m
+[31m-                            <div className="col-4">[m
+[31m-                                <img src="https://annalectbox.com.gt/AdOps/ErroresPlataformas/img/icon/letter.png" alt="inversion" />[m
+[32m+[m[32m                                    <div className="h5 mb-0 font-weight-bold text-gray-800 totalnumeroerrores erroresinversion"  >[m
+[32m+[m
+[32m+[m[32m                                        {total.totalnomeclatura}</div>[m
+[32m+[m[32m                                </div>[m
+[32m+[m[32m                                <div className="col-4">[m
+[32m+[m[32m                                    <img src="https://annalectbox.com.gt/AdOps/ErroresPlataformas/img/icon/letter.png" alt="inversion" />[m
+[32m+[m[32m                                </div>[m
+                             </div>[m
+                         </div>[m
+                     </div>[m
+[31m-                </div>[m
+[31m-            </div>[m
+[32m+[m[32m                </button>[m
+[32m+[m
+ [m
+[31m-            [m
+[31m-                <div className="col-xl-3 col-md-6 mb-1 contadorerrores">[m
+[32m+[m[32m                <button className="col-xl-3 col-md-6 mb-1 contadorerrores" id="inacti" onClick={this.activarinv}>[m
+                     <div className="card border-left-success shadow h-100 py-2">[m
+                         <div className="card-body  pb-0 pt-0">[m
+                             <div className="row no-gutters align-items-center">[m
+[36m@@ -90,9 +121,9 @@[m [mexport class Totales extends Component {[m
+                             </div>[m
+                         </div>[m
+                     </div>[m
+[31m-                </div>[m
+[32m+[m[32m                </button>[m
+ [m
+[31m-                <div className="col-xl-3 col-md-6 mb-1 contadorerrores">[m
+[32m+[m[32m                <button className="col-xl-3 col-md-6 mb-1 contadorerrores" id="ubacti" onClick={this.activarubi}>[m
+                     <div className="card border-left-info shadow h-100 py-2">[m
+                         <div className="card-body  pb-0 pt-0">[m
+                             <div className="row no-gutters align-items-center">[m
+[36m@@ -111,7 +142,7 @@[m [mexport class Totales extends Component {[m
+                             </div>[m
+                         </div>[m
+                     </div>[m
+[31m-                </div>[m
+[32m+[m[32m                </button>[m
+             </div>[m
+         )[m
+         ))[m
+[1mdiff --git a/src/componentes/nav.js b/src/componentes/nav.js[m
+[1mindex b10f035..cc37ab3 100644[m
+[1m--- a/src/componentes/nav.js[m
+[1m+++ b/src/componentes/nav.js[m
+[36m@@ -49,7 +49,7 @@[m [mimport $ from 'jquery';[m
+         <span>Control Campaña</span></a>[m
+ </li>[m
+                             <li className="nav-item active">[m
+[31m-                                <a className="nav-link" href="https://annalectbox.com.gt/AdOps/PlataformErrores">[m
+[32m+[m[32m                                <a className="nav-link" href="/">[m
+                                     <img src="https://annalectbox.com.gt/AdOps/ErroresPlataformas/img/menu/errores.svg" alt="erroes"/>[m
+                                     <span>Errores</span></a>[m
+                             </li>[m
+[1mdiff --git a/src/componentes/tabs.js b/src/componentes/tabs.js[m
+[1mindex 41e6099..015a5c6 100644[m
+[1m--- a/src/componentes/tabs.js[m
+[1m+++ b/src/componentes/tabs.js[m
+[36m@@ -45,7 +45,7 @@[m [mexport class Tabs extends Component {[m
+         fetch('https://annalectbox.com.gt/AdOps/Api/Errors/DataPlatforms/v1/Data/?token=AasdKAS12ksaKasa9zbG9zZXJyb3JlYWFMas912SaaszMjAxOQ==')[m
+           .then(response => response.json())[m
+           .then(errores => {[m
+[31m-            // errores.sort((a, b) => a.cuenta - b.iderror);[m
+[32m+[m[32m            errores.sort((a, b) => a.iderror - b.iderror);[m
+             this.setState({ errores: [...errores] });[m
+             // call getData() again in 5 seconds[m
+             this.intervalID = setTimeout(this.getData.bind(this), 3000);[m
+[36m@@ -89,6 +89,7 @@[m [m$("#enviofiltro").click();[m
+         var mediosGO =[];[m
+         var mediosTW =[];[m
+         var mediosMM =[];[m
+[32m+[m[32m        var mediosAF =[];[m
+         errores.find(function(item){[m
+             [m
+           if(item.Media === "FB"){[m
+[36m@@ -102,6 +103,9 @@[m [m$("#enviofiltro").click();[m
+           else if(item.Media === "MM"){[m
+             mediosMM.push(item)[m
+           }[m
+[32m+[m[32m          else if(item.Media === "AF"){[m
+[32m+[m[32m            mediosAF.push(item)[m
+[32m+[m[32m          }[m
+           return null;[m
+         });[m
+ [m
+[36m@@ -109,6 +113,8 @@[m [m$("#enviofiltro").click();[m
+       const erroresengo = mediosGO.length;[m
+       const erroresentw = mediosTW.length;[m
+       const erroresenmm = mediosMM.length;[m
+[32m+[m[32m      const erroresenaf = mediosAF.length;[m
+[32m+[m
+ [m
+ [m
+       $(".totalfb").text(erroresenfb);[m
+[36m@@ -118,6 +124,10 @@[m [m$("#enviofiltro").click();[m
+       $(".totaltw").text(erroresentw);[m
+       [m
+       $(".totalmm").text(erroresenmm);[m
+[32m+[m[41m      [m
+[32m+[m[32m      $(".totalaf").text(erroresenaf);[m
+[32m+[m
+[32m+[m[32m      $(".erroresinversiontotal").text(erroresenmm+erroresentw+erroresengo+erroresenfb);[m
+ [m
+ [m
+    [m
+[36m@@ -139,6 +149,10 @@[m [m$("#enviofiltro").click();[m
+                 <TabPane tabId="4" className="tabpan4">[m
+                 <Errores medio={this.state.medio} errores={this.state.errores}  user={this.props.user} />[m
+              [m
+[32m+[m[32m                </TabPane>[m
+[32m+[m[32m                <TabPane tabId="5" className="tabpan5">[m
+[32m+[m[32m                <Errores medio={this.state.medio} errores={this.state.errores}  user={this.props.user} />[m
+[32m+[m[41m             [m
+                 </TabPane>[m
+             </>[m
+         );[m
+[36m@@ -226,6 +240,16 @@[m [m$("#enviofiltro").click();[m
+                         <span className="totalmm ml-2"></span>[m
+           </NavLink>[m
+                     </NavItem>[m
+[32m+[m[32m                    <NavItem className="col-12 col-sm-4 col-xl-2">[m
+[32m+[m[32m                    <NavLink className="p-1 twcon"[m
+[32m+[m[32m                        active={this.state.activeTab[0] === '5'}[m
+[32m+[m[32m                        onClick={() => { this.toggle(0, '5');  this.setState({medio : "AF"}) } }[m
+[32m+[m[32m                    >[m
+[32m+[m[32m                    Adform[m
+[32m+[m[32m                    <i className="fas fa-ad ml-2"></i>[m
+[32m+[m[32m                    <span className="totalaf ml-2"></span>[m
+[32m+[m[32m      </NavLink>[m
+[32m+[m[32m                </NavItem>[m
+                     </Nav>[m
+                     <TabContent  activeTab={this.state.activeTab[0]}>[m
+                         {this.tabPane()}[m
