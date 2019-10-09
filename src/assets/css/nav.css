@@ -11211,6 +11211,12 @@
     text-align: center;
     margin-bottom: 1rem;
     cursor: pointer;
+    background-image: url("http://34.201.99.133/adops/administracion/img/cuentas.png");
+background-repeat: no-repeat;
+background-position: 50%;
+background-color: #041b60;
+background-size: auto;
+padding: 20px;
   }
   
   .sidebar #sidebarToggle::after {
@@ -11484,7 +11490,7 @@
   }
   
   .sidebar-dark #sidebarToggle {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgb(8, 39, 132);
   }
   
   .sidebar-dark #sidebarToggle::after {
@@ -12060,7 +12066,7 @@
     {
         width: 100%;
     max-width: 31px;
-    border: 1px solid #082784;
+    border: 1px solid white;
     padding: 5px;
     border-radius: 100px;
     }
@@ -12097,7 +12103,7 @@
 {
     background: rgba(9,45,154,1);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(9,45,154,1)), color-stop(80%, rgba(9,45,154,1)), color-stop(100%, rgba(20,255,200,1)));
-    background: linear-gradient(to bottom, rgb(182, 238, 251) 0%, rgb(159, 177, 232) 80%, rgb(70, 82, 142) 100%);
+   background: rgb(20, 48, 100) 0%;
     position: absolute;
     z-index: 999;
     top: 0px;

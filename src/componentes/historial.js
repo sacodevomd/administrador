@@ -19,8 +19,6 @@ async componentDidMount() {
 
     render() {
 
-    var {data} = this.state
-
         return (
             <div className="App apphistorial" >
             <Nav />
@@ -29,7 +27,7 @@ async componentDidMount() {
             //   user={this.state.user} 
               />
               <h1 className="col-11 col-xl-10 m-auto text-left">Bitacora</h1>
-             <div className="bitacoradiv">               
+             <div className="col-12">               
               <Bitacora />
               </div>
 

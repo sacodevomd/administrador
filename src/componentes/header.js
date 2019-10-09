@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+
 export class Header extends Component {
+
     sideaction(){
 
         console.log("Asdfasd");
         $("body").toggleClass("sidebar-toggled");
         $(".sidebar").toggleClass("toggled");
-       
-     
+
         }
+
+   
+
     render() {
+
         return (
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-1 static-top shadow">
+        <link ></link>
                 <button id="sidebarToggleTop" className="btn btn-link  rounded-circle mr-3" onClick={this.sideaction}>
                     <i className="fa fa-bars"></i>
                 </button>

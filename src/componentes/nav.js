@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../assets/css/nav.css';
 import '../assets/fontawesome-free/css/all.min.css';
 import $ from 'jquery';
- class Nav extends Component {
+ class Navs extends Component {
 
     sideaction(){
 
@@ -15,6 +15,7 @@ import $ from 'jquery';
  
     }
     render(){
+        $("#sidebarToggleTop").hide();
     return (
 <div className="contenedomenus">
             <ul className="navbar-nav bg-gradient-primary  sidebar sidebar-dark accordion toggled" id="accordionSidebar">
@@ -45,13 +46,13 @@ import $ from 'jquery';
     </div>
 
     <li className="nav-item">
-    <a className="nav-link" href="/">
+    <a className="nav-link reportesnav" href="/reportes">
     <img src="https://annalectbox.com.gt/AdOps/ErroresPlataformas/img/menu/control.svg" alt="erroes"/>
                                   
         <span>Control Campaña</span></a>
 </li>
-                            <li className="nav-item active">
-                                <a className="nav-link" href="/">
+                            <li className="nav-item erroresnav ">
+                                <a className="nav-link" href="/errores">
                                     <img src="https://annalectbox.com.gt/AdOps/ErroresPlataformas/img/menu/errores.svg" alt="erroes"/>
                                     <span>Errores</span></a>
                             </li>
@@ -76,10 +77,18 @@ import $ from 'jquery';
                               
                                 <span>Materiales</span></a>
                         </li>
+                        <li className="nav-item medioslocalenav">
+                        <a className="nav-link" href="/medios-locales">
+                        <img src="https://annalectbox.com.gt/AdOps/ErroresPlataformas/img/menu/materiales.svg" alt="erroes"/>
+                          
+                            <span>Medios Locales</span></a>
+                    </li>
 
 
-                                <div className="text-center d-none d-md-inline">
-                                    <button className="rounded-circle border-0" id="sidebarToggle" onClick={this.sideaction}></button>
+                                <div className="text-center d-none d-md-inline mt-3">
+                                    <button className="rounded-circle border-0" id="sidebarToggle" onClick={this.sideaction}>
+                                  
+                                    </button>
                                 </div>
 
 
@@ -94,28 +103,23 @@ import $ from 'jquery';
             
          
 
-    <li className="nav-item">
-    <a className="nav-link" href="/">
-    <img src="https://annalectbox.com.gt/AdOps/ErroresPlataformas/img/menu/control.svg" alt="erroes"/>
-                                  
-        <span>Control Campaña</span></a>
-</li>
+
                             <li className="nav-item active">
-                                <a className="nav-link" href="/">
-                                    <img src="https://annalectbox.com.gt/AdOps/ErroresPlataformas/img/menu/errores.svg" alt="erroes"/>
+                                <a className="nav-link" href="/administracion/">
+                                    <img src={require("./img/accountsxmarca.png")} alt="erroes"/>
                                     <span>Marcas Cuentas</span></a>
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link" href="/">
-                                <img src="https://annalectbox.com.gt/AdOps/ErroresPlataformas/img/menu/tareas.svg" alt="erroes"/>
+                                <a className="nav-link" href="/registro-de-cuentas">
+                                <img src={require("./img/cuenta.png")} alt="erroes"/>
                                   
                                     <span>Admin Cuentas</span></a>
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link" href="/about">
-                                <img src="https://annalectbox.com.gt/AdOps/ErroresPlataformas/img/menu/resultado.svg" alt="erroes"/>
+                                <a className="nav-link" href="/marcas">
+                                <img src={require("./img/History.png")} alt="erroes"/>
                                   
                                     <span>Bitacora</span></a>
                             </li>
@@ -133,4 +137,4 @@ import $ from 'jquery';
                     
                     }
                 }
-export default Nav;
+export default Navs;

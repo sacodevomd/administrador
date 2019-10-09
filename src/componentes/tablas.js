@@ -5,6 +5,7 @@ import Search from './search.js';
 
 
 
+
 export class Tablas extends Component {
   render(){
     return(

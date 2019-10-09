@@ -16,13 +16,26 @@ class Search extends Component {
     filtros: [],
     checked: "checked",
     marca: 0,
-    cuenta: ""
+    cuenta: "",
+    token:''
 
   };
   async componentDidMount() {
     //const res = await fetch('https://annalectbox.com.gt/AdOps/ApiErrors/all.php?usuario=0&media=FB')
-    const res = await fetch('http://34.201.99.133:5000/task/Marca')
-    const datos = await res.json();
+    const resto = await fetch("http://34.201.99.133:5000/task/Token/api-flask-adops")
+    const token = await resto.json();
+    this.setState({ token: token.token })
+
+   const res = await fetch('http://34.201.99.133:5000/task/Marca',
+      {
+          method: 'GET', 
+          headers:{
+               //this what's exactly look in my postman
+              'Authorization': 'Bearer '+ this.state.token,
+          },
+          res: this.data
+      })
+      const datos = await res.json();
     this.setState({ datos: datos })
 
     const res1 = await fetch('http://34.201.99.133:5000/task/MarcaNames')

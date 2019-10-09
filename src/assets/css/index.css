@@ -4434,7 +4434,7 @@ input[type="button"].btn-block {
 }
 
 .tab-content > .active {
-  display: block;
+  display: flex;
 }
 
 .navbar {
@@ -11255,11 +11255,18 @@ a:focus {
 }
 
 .sidebar.toggled #sidebarToggle::after {
-  content: '\f105';
+
   font-family: 'Font Awesome 5 Free';
   margin-left: 0.25rem;
 }
-
+.sidebar.toggled #sidebarToggle::after
+{
+  display:none;
+}
+#sidebarToggle img{
+  background: transparent!important;
+  border:0px!important;
+}
 .sidebar .sidebar-brand {
   height: 4.375rem;
   text-decoration: none;
@@ -12512,7 +12519,7 @@ margin-bottom: 0px;
 }
 .bitacoradiv
 {
-  height: 70vh;
+  height: 60vh;
     overflow-y: scroll;
 }
 .checkesitobitacora
@@ -12522,4 +12529,131 @@ margin-bottom: 0px;
 .dangerbitaora
 {
   color: #e74a3b;
+}
+#Formaularioregistro .tab-content > .active
+{
+  display: flex!important;
+  justify-content:space-around;
+  flex-wrap: wrap;
+  height: 70vh!important;
+}
+.contenidodemarca
+{
+  display: flex!important;
+  justify-content:flex-start;
+  flex-wrap: wrap;
+
+}
+
+.cuentamarcaid
+{
+  width: 100%;
+}
+.marcamediocuenta
+{
+  width: 100%;
+}
+.titulodemarcasasig h1 {
+  font-size: 30px;
+  margin-right: 15px;
+}
+.titulodemarcasasig i {
+  font-size: 18px;
+  background: #082684;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 34px;
+  width: 34px;
+  padding: 10px;
+}
+#datosnuevos input, #datosnuevos select {
+  border: 1px solid #ccc;
+  width: 30%;
+  color: #8c7575;
+  text-align: center;
+  text-align-last: center;
+  margin: 5px;
+  padding: 5px;
+}
+.bitacoradacarda 
+{
+
+    justify-content: flex-start;
+    align-items: center;
+}
+.elminarcuenta
+{
+  cursor: pointer;
+  transition: 0.1s;
+}
+.elminarcuenta:hover{
+  color:#d33;
+}
+.bitacoradiv > div 
+{
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.reportestablas {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-wrap: wrap;
+}
+.reportestablas span{
+  font-weight: 900;
+}
+.reportestablas p {
+  margin-left: 10px;
+  width: 20%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+.reportestablasss
+{
+  height: 75vh;
+  overflow-y: scroll;
+  border: 0px;
+}
+.datosdelreporteisual p
+{
+  font-size: 10px;
+  
+}
+#datatotales > .datosdelreporteisual,
+#datatotales > .datosdelreporteisual p
+{
+  color:white!important;
+}
+#detallesreporte p {
+  font-size: 12px;
+}
+.cartasdedetalle p
+{
+  margin-bottom: 0px;
+}
+.titulosdeetall
+{
+  border-radius: 5px;
+}
+.cartasdedetalle
+{
+  border:0.5px solid #ccc;
+  padding:10px;
+  border-radius: 5px;
+}
+#datatotales > .datosdelreporteisual
+{
+  background: #4e73df!important;
+}
+
+.tablasdecolapso > p
+{
+  flex-direction:column;
 }

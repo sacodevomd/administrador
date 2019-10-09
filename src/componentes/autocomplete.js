@@ -101,8 +101,10 @@ $(".buscadoruno").val(userInput);
           <ul className="suggestions">
             {filteredSuggestions.map((suggestion, index) => {
               let className;
+             
 
               if (index === activeSuggestion) {
+               
                 className = "";
               }
 
